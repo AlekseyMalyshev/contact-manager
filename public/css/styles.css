@@ -1,0 +1,79 @@
+
+
+h1.title {
+  text-align: center;
+}
+
+table.contacts>thead>tr>th {
+  text-align: center;
+}
+
+table.contacts th>i:hover,
+table.contacts tfoot>tr>td>i:hover {
+  cursor: pointer;
+}
+
+table.contacts tfoot>tr>td {
+  text-align: right;
+}
+
+th.edit-icon,
+td.edit-icon {
+  width: 1px;
+}
+
+i.fa-pencil-square-o,
+i.fa-save,
+i.fa-trash-o,
+i.fa-plus-square-o {
+  border-radius: 4px;
+  padding: 5px;
+  margin: 1px;
+}
+
+i.fa-pencil-square-o:hover,
+i.fa-save:hover,
+i.fa-trash-o:hover,
+i.fa-plus-square-o:hover {
+  background-color: #fefefe;
+  border: 1px solid #b7b8b8;
+  margin: 0px;
+  cursor: pointer;
+}
+
+i.fa-pencil-square-o:hover,
+i.fa-save:hover {
+  color: #449d44;
+}
+
+i.fa-trash-o:hover {
+  color: #c9302c;
+}
+
+i.fa-pencil-square-o:active,
+i.fa-save:active,event.target.text
+i.fa-trash-o:active,
+i.fa-plus-square-o:active {
+  background-color: #bbbbbb;
+  border: 1px solid #b7b8b8;
+  margin: 0px;
+}
+
+td.editable {
+  cursor: pointer;
+}
+
+input.editbox {
+  position: absolute;
+  outline: none;
+  border: none;
+  padding: 0px;
+}
+
+div.fields {
+  margin: 0px 0px 15px 0px;
+}
+
+div.fields>input {
+  width: 100%;
+}

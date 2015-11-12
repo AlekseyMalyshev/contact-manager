@@ -1,0 +1,25 @@
+{
+  "name": "contact-manager",
+  "version": "1.0.0",
+  "description": "Advanced Contact Manager",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:AlekseyMalyshev/contact-manager.git"
+  },
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "5.0.0"
+  },
+  "author": "Aleksey Malyshev",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "jade": "^1.11.0",
+    "morgan": "^1.6.1"
+  }
+}

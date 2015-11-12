@@ -1,0 +1,30 @@
+.container
+  .row.user-box
+    .col-sm-6.col-sm-offset-3.col-md-4.col-md-offset-4
+      h3.text-center Create New Contact
+      hr.colorgraph
+      form#new-contact(action='#', method='post')
+        fieldset
+          .fields
+            input#name(type='text', placeholder='Name', required, autofocus)
+          .fields
+            input#surname(type='text', placeholder='Surname', required)
+          .fields
+            input#address(type='text', placeholder='Address', required)
+          .fields
+            input#zip(type='text', placeholder='zipcode', required)
+          .fields
+            input#phone(type='text', placeholder='Phone #', required)
+          .fields
+            input#city(type='text', placeholder='City', required)
+          .fields
+            input#state(type='text', placeholder='State', required)
+          .fields
+            .col-sm-6
+              button.btn.btn-md.btn-primary.btn-block(type='cancel')
+                i.fa.fa-times
+                |  Cancel
+            .col-sm-6
+              button.btn.btn-md.btn-success.btn-block.confirm(type='submit')
+                i.fa.fa-check
+                |  OK

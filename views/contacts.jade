@@ -1,0 +1,38 @@
+table.table.table-striped.table-bordered.table-hover.contacts
+  thead
+    tr
+      th Name&nbsp;
+        i.fa.fa-unsorted
+      th Surname&nbsp;
+        i.fa.fa-unsorted
+      th Address&nbsp;
+        i.fa.fa-unsorted
+      th zipcode&nbsp;
+        i.fa.fa-unsorted
+      th Phone&nbsp;
+        i.fa.fa-unsorted
+      th City&nbsp;
+        i.fa.fa-unsorted
+      th State&nbsp;
+        i.fa.fa-unsorted
+      th.edit-icon
+      th.edit-icon
+        i.fa.fa-plus-square-o
+  tbody
+    each contact in contacts
+      tr(id='id-' + contact.id)
+        td.editable= contact.name
+        td.editable= contact.surname
+        td.editable= contact.address
+        td.editable= contact.zip
+        td.editable= contact.phone
+        td.editable= contact.city
+        td.editable= contact.state
+        td.edit-icon
+          i.fa.fa-pencil-square-o
+        td.edit-icon
+          i.fa.fa-trash-o(data-toggle="modal", data-target="#confirm")
+  tfoot
+    tr
+      td(colspan="9")
+        i.fa.fa-plus-square-o

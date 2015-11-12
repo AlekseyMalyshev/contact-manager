@@ -1,0 +1,24 @@
+{
+  "name": "contact-manager",
+  "description": "Advanced Contact Manager",
+  "main": "server.js",
+  "authors": [
+    "Aleksey Malyshev"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/AlekseyMalyshev/contact-manager",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.5",
+    "font-awesome": "~4.4.0"
+  }
+}
