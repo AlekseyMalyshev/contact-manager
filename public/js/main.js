@@ -116,7 +116,8 @@ function confirmDelete(event) {
   $toDelete = $(event.target).parents('tr');
 
   $('h4.modal-title').text('You are about to delete a contact. This operation can not be undone.');
-  $('button.confirm').one('click', deleteContact);
+  $('button.confirm').off();
+  $('button.confirm').on('click', deleteContact);
   $('div#confirm').modal();
 }
 
@@ -235,7 +236,8 @@ function finishEdit($tr) {
   if ($inRow && !inEdit($tr)) {
     if (rowChanged($inRow)) {
       $('h4.modal-title').text('You have unsaved changes. Do you want to save them?');
-      $('button.confirm').one('click', saveEdit());
+      $('button.confirm').off();
+      $('button.confirm').on('click', saveEdit);
       $('#confirm').modal();
     }
     else {
