@@ -29,7 +29,7 @@ function init() {
   $('div.content').on('click', 'table.contacts i.fa-plus-square-o', addContact);
 
   $('div.content').on('submit', 'form#new-contact', submitContact);
-  $('div.content').on('cancel', 'form#new-contact', confirmContact);
+  $('div.content').on('reset', 'form#new-contact', confirmContact);
 }
 
 function sortColumn(event) {
