@@ -97,11 +97,12 @@ function editContact(event) {
   event.stopPropagation();
 
   var $tr = $(event.target).parents('tr');
-  finishEdit($tr);
-  $tr.children('td.editable').each(function() {
-    edit($(this));
-  });
-  btnSave($(event.target));
+  if (finishEdit($tr)) {
+    $tr.children('td.editable').each(function() {
+      edit($(this));
+    });
+    btnSave($(event.target));
+  }
 }
 
 function saveContact(event) {
@@ -116,6 +117,7 @@ function confirmDelete(event) {
   $toDelete = $(event.target).parents('tr');
 
   $('h4.modal-title').text('You are about to delete a contact. This operation can not be undone.');
+  $('button.cancel').off();
   $('button.confirm').off();
   $('button.confirm').on('click', deleteContact);
   $('div#confirm').modal();
@@ -131,7 +133,6 @@ function deleteContact(event) {
 }
 
 function showError(err) {
-  console.error('aaaa');
   $('div#show-error').modal();
 }
 
@@ -146,9 +147,10 @@ function editField(event) {
   event.stopPropagation();
 
   var $tr = $(event.target).parent();
-  finishEdit($tr);
-  edit($(event.target));
-  btnSave($tr.find('i.fa-pencil-square-o'));
+  if (finishEdit($tr)) {
+    edit($(event.target));
+    btnSave($tr.find('i.fa-pencil-square-o'));
+  }
 }
 
 function edit($td) {
@@ -236,9 +238,12 @@ function finishEdit($tr) {
   if ($inRow && !inEdit($tr)) {
     if (rowChanged($inRow)) {
       $('h4.modal-title').text('You have unsaved changes. Do you want to save them?');
+      $('button.cancel').off();
+      $('button.cancel').on('click', cancelEdit);
       $('button.confirm').off();
       $('button.confirm').on('click', saveEdit);
       $('#confirm').modal();
+      return false;
     }
     else {
       cancelEdit();
@@ -246,6 +251,7 @@ function finishEdit($tr) {
   }
 
   $inRow = $tr;
+  return true;
 }
 
 function addContact() {
